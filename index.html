@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talky Hands ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="menuUtama">
+            <h1>Halo! Selamat Datang di Talky Hands ✨</h1>
+            <p class="subtitle">by Qisty</p>
+            <div class="menu-buttons">
+                <button onclick="bukaHalaman('halamanAbjad')" class="btn-menu">📖 Mengenal Abjad BISINDO</button>
+                <button onclick="bukaHalaman('halamanGame')" class="btn-menu">🎮 Main Game Tebak Isyarat</button>
+            </div>
+        </div>
+
+        <div id="halamanAbjad" style="display: none;">
+            <button onclick="bukaHalaman('menuUtama')" class="btn-back">← Kembali</button>
+            <h2>Mengenal Abjad BISINDO</h2>
+            <p>Ketik kata untuk melihat visualnya:</p>
+            <input type="text" id="inputTeks" placeholder="Contoh: halo" oninput="translateKeIsyarat()">
+            <div class="result-section">
+                <div id="displayIsyarat"></div>
+            </div>
+        </div>
+
+        <div id="halamanGame" style="display: none;">
+            <button onclick="bukaHalaman('menuUtama')" class="btn-back">← Kembali</button>
+            <h2>🎮 Game Tebak Isyarat</h2>
+            <div id="gameDisplayContainer">
+                <div id="gameDisplay">
+                    <p>Siap?</p>
+                </div>
+            </div>
+            <div class="game-controls">
+                <input type="text" id="tebakInput" placeholder="?" style="display: none; width: 60px;">
+                <br><br>
+                <button onclick="startGame()" id="btnGame" class="btn-aesthetic">Mulai Game</button>
+            </div>
+            <p id="feedback"></p>
+            <p class="score-text">Skor: <span id="skor">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
